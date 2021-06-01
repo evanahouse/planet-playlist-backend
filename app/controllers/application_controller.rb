@@ -1,7 +1,9 @@
+require_relative '../secrets'
+
 class ApplicationController < ActionController::API
     # all requests come thru here, we dont want get post patch delete to happen unless they are authorized
     before_action :authorized
-    
+
     def encode_token(payload)
         JWT.encode(payload, 'my_secret')
     end

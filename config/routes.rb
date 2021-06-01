@@ -13,6 +13,12 @@ Rails.application.routes.draw do
           get :search
         end
       end
+      resources :playlists do
+        collection do
+          post :search
+        end
+      end
+      resources :reviews, only: [:index, :show, :create]
     end
   end
 end

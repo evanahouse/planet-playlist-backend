@@ -25,10 +25,10 @@ class Api::V1::TracksController < ApplicationController
         # @tracks = s_tracks.map do |s_track|
         #     Track.new_from_spotify_track(s_track)
         # end
-        playlists = RSpotify::Playlist.search('Indie')
-        @tracks = playlists.first.tracks.map do |track|
-            Track.new_from_spotify_track(track)
-        end
+        playlists = RSpotify::Playlist.search('Rock')
+        # @tracks = playlists.first.tracks.map do |track|
+        #     Track.new_from_spotify_track(track)
+        # end
         @playlist = playlists.first
         render json: @playlist
     end

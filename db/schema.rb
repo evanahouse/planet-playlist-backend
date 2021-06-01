@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 2021_05_19_204832) do
   enable_extension "plpgsql"
 
   create_table "playlists", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "img_url"
-    t.string "owner"
     t.string "spotify_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "owner"
+    t.string "img_url"
+    t.string "description"
+    t.string "name"
   end
 
   create_table "reviews", force: :cascade do |t|
